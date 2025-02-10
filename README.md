@@ -44,7 +44,7 @@ Run the following command to test the model on **1024×1024** resolution images:
 ```bash
 python test.py \
 --dataroot ./datasets/eyeq_reference \
---name 0831_0 --model pctest --dataset_mode pctest --phase test\
+--name 0831_0 --model adagatetest39 --dataset_mode pctest --phase test\
 --netG unetd2 --netD_HF pixel --netD mambass2 --norm instance --load_size 1024 --crop_size 1024\
 --gpu_ids 0 --batch_size 4 --no_dropout 
 ```
