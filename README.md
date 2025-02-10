@@ -31,7 +31,7 @@ We provide pretrained models for easy usage:
 ## 🏋️‍♂️ Training (1024×1024)
 Run the following command to train the model on **1024×1024** resolution images:
 ```bash
-python train.py --dataroot ./datasets/eyeq_reference --name 0831_0 --model testour --netG unetd2 \
+python train.py --dataroot ./datasets/eyeq_reference --name 0831_0 --model fie --netG unetd2 \
 --netD mambass2 --netD_HF pixel --dataset_mode degraded_with_mask \
 --norm instance --gpu_ids 0 --batch_size 1 --lr_policy linear --display_id 1 \
 --n_epochs 150 --n_epochs_decay 50 --load_size 1072 --save_epoch_freq 40 --crop_size 1024 \
@@ -44,7 +44,7 @@ Run the following command to test the model on **1024×1024** resolution images:
 ```bash
 python test.py \
 --dataroot ./datasets/eyeq_reference \
---name 0831_0 --model adagatetest39 --dataset_mode pctest --phase test\
+--name 0831_0 --model fietest --dataset_mode pctest --phase test\
 --netG unetd2 --netD_HF pixel --netD mambass2 --norm instance --load_size 1024 --crop_size 1024\
 --gpu_ids 0 --batch_size 4 --no_dropout 
 ```
