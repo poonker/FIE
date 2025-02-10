@@ -3,7 +3,7 @@
 This repository provides the implementation of **A Hybrid CNN-Mamba Model for Multi-Scale Fundus Image Enhancement**, which has been accepted by *Biomedical Optics Express*.
 
 ---
-![](https://github.com/poonker/FIE/blob/main/image.png)
+![](https://github.com/poonker/FIE/blob/main/fig1.jpg)
 ---
 
 ## 🔑 Key Idea
