@@ -5,7 +5,7 @@ This repository provides the implementation of **A Hybrid CNN-Mamba Model for Mu
 ---
 
 ## 🔑 Key Idea
-The **Mamba discriminator** may be more efficient than convolutional kernels when treating images as sequential data, similar to text processing.
+The **Mamba discriminator** may be more efficient than convolutional kernels when treating images as sequential data, similar to processing long sequences of text.
 
 ---
 
