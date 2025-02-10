@@ -3,6 +3,8 @@
 This repository provides the implementation of **A Hybrid CNN-Mamba Model for Multi-Scale Fundus Image Enhancement**, which has been accepted by *Biomedical Optics Express*.
 
 ---
+[](https://github.com/poonker/FIE/blob/main/image.png)
+---
 
 ## 🔑 Key Idea
 The **Mamba discriminator** may be more efficient than convolutional kernels when treating images as sequential data, similar to processing long sequences of text.
