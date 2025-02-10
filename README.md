@@ -1,2 +1,47 @@
-# FIE
-Fundus Image Enhancement
+# FIE - Fundus Image Enhancement
+
+This repository provides the implementation of **A Hybrid CNN-Mamba Model for Multi-Scale Fundus Image Enhancement**, which has been accepted by *Biomedical Optics Express*.
+
+---
+
+## 🔑 Key Idea
+The **Mamba discriminator** may be more efficient than convolutional kernels when treating images as sequential data, similar to text processing.
+
+---
+
+## 🚀 How to Use
+We recommend familiarity with the **PyTorch CycleGAN** code paradigm before using this project.
+
+### 📂 Dataset
+Following **Cofenet**, we degraded the **EyeQ dataset** to create paired training data.  
+The degradation code is stored in the `tools` folder.  
+This paper also integrates **cataract-like degradation** methods.  
+You can compile these scripts to generate degraded images that closely resemble real-world scenarios.
+
+---
+
+## 📌 Pretrained Models
+We provide pretrained models for easy usage:  
+- **256×256** → [Download](#)  
+- **512×512** → [Download](#)  
+- **1024×1024** → [Download](#)  
+
+---
+
+## 🏋️‍♂️ Training (1024×1024)
+Run the following command to train the model on **1024×1024** resolution images:
+```bash
+python train.py --dataroot ./datasets/eyeq_reference --name 0831_0 --model testour --netG unetd2 \
+--netD mambass2 --netD_HF pixel --dataset_mode degraded_with_mask \
+--norm instance --gpu_ids 0 --batch_size 1 --lr_policy linear --display_id 1 \
+--n_epochs 150 --n_epochs_decay 50 --load_size 1072 --save_epoch_freq 40 --crop_size 1024 \
+--PTWH 1 --lr 1e-3 --display_port 8097 --display_env 0831_0 --lambda_G_G 10
+
+## 🏋️‍♂️ testing (1024×1024)
+Run the following command to test the model on **1024×1024** resolution images:
+```bash
+!python test.py \
+--dataroot /root/pytorch-CycleGAN-and-pix2pix-master/datasets/eyeq_reference \
+--name 0831_0 --model pctest --dataset_mode pctest --phase test\
+--netG unetd2 --netD_HF pixel --netD mambass2 --norm instance --load_size 1024 --crop_size 1024\
+--gpu_ids 0 --batch_size 4 --no_dropout 
