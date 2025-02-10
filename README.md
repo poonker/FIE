@@ -10,10 +10,10 @@ The **Mamba discriminator** may be more efficient than convolutional kernels whe
 ---
 
 ## 🚀 How to Use
-We recommend familiarity with the **PyTorch CycleGAN(https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)** code paradigm before using this project.
+We recommend familiarity with the **[PyTorch CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)** code paradigm before using this project.
 
 ### 📂 Dataset
-Following **Cofenet(https://github.com/joanshen0508/Fundus-correction-cofe-Net)**, we degraded the **EyeQ dataset** to create paired training data.  
+Following **[Cofenet](https://github.com/joanshen0508/Fundus-correction-cofe-Net)**, we degraded the **[EyeQ](https://github.com/HzFu/EyeQ) dataset** to create paired training data.  
 The degradation code is stored in the `tools` folder.  
 This paper also integrates **cataract-like degradation** methods.  
 You can compile these scripts to generate degraded images that closely resemble real-world scenarios.
@@ -36,7 +36,7 @@ python train.py --dataroot ./datasets/eyeq_reference --name 0831_0 --model testo
 --norm instance --gpu_ids 0 --batch_size 1 --lr_policy linear --display_id 1 \
 --n_epochs 150 --n_epochs_decay 50 --load_size 1072 --save_epoch_freq 40 --crop_size 1024 \
 --PTWH 1 --lr 1e-3 --display_port 8097 --display_env 0831_0 --lambda_G_G 10
-
+```
 ---
 
 ## 🏋️‍♂️ testing (1024×1024)
@@ -47,3 +47,4 @@ python test.py \
 --name 0831_0 --model pctest --dataset_mode pctest --phase test\
 --netG unetd2 --netD_HF pixel --netD mambass2 --norm instance --load_size 1024 --crop_size 1024\
 --gpu_ids 0 --batch_size 4 --no_dropout 
+```
